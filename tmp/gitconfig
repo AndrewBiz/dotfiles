@@ -1,0 +1,19 @@
+[user]
+	name = Andrew Bizyaev
+	email = andrew.bizyaev@gmail.com
+[github]
+	user = AndrewBiz
+	token = c2969c52e97b0329d8db4a851de9eb73
+[core]
+	excludesfile = /Users/anb/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/dev/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
+[color]
+	ui = auto
