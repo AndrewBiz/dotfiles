@@ -19,7 +19,7 @@
 	cmd = vim -d "$LOCAL" "$MERGED" "$REMOTE"
 	trustExitCode = true
 [push]
-	default = simple
+	default = current
 [color]
 	ui = auto
 	status = auto
