@@ -4,6 +4,7 @@ DO_NOT_SYMLINK = %w[
   Rakefile
   README.markdown
   tmp
+  LICENSE
 ]
 
 
