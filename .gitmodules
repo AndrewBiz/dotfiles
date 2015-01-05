@@ -55,3 +55,6 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = http://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-open-url"]
+	path = vim/bundle/vim-open-url
+	url = http://github.com/henrik/vim-open-url.git

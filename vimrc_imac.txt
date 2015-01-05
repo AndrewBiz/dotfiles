@@ -1,0 +1,159 @@
+set nocompatible
+filetype off
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
+
+" Bundle 'vundle'
+" Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+" Bundle 'git://github.com/vim-scripts/ruby-matchit.git'
+"Bundle 'git://github.com/tpope/vim-endwise.git'
+" Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+"Bundle 'tpope/vim-haml.git'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-commentary.git'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'kchmck/vim-coffee-script.git'
+" Bundle 'bronson/vim-trailing-whitespace.git'
+"Bundle 'vim-scripts/taglist.vim.git'
+"Bundle 'vim-scripts/netrw.vim.git'
+" Bundle 'vim-scripts/twilight256.vim.git'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"Bundle 'TinyBufferExplorer'
+" Bundle 'Railscasts-Theme-GUIand256color'
+" Bundle 'bbommarito/vim-slim.git'
+"Bundle 'niquola/vim-pg.git'
+"Bundle 'niquola/vim-every-day.git'
+"Bundle 'mileszs/ack.vim.git'
+"Bundle 'niquola/vim-hl7.git'
+" Bundle 'wuxb45/ADL.git'
+" Bundle 'kien/ctrlp.vim.git'
+"Bundle 'groenewege/vim-less'
+"Bundle 'tpope/vim-dispatch.git'
+" Bundle 'ngmy/vim-rubocop.git'
+" Bundle 'scrooloose/syntastic.git'
+" Bundle 'rorymckinley/vim-rubyhash.git'
+"Bundle 'ck3g/vim-change-hash-syntax.git'
+" Bundle 'tpope/vim-rails.git'
+"Bundle 'rking/vim-detailed'
+"Bundle 'tpope/vim-endwise.git'
+"Bundle 'tpope/vim-surround.git'
+" Bundle 'ervandew/supertab.git'
+"Bundle 'powerman/vim-plugin-ruscmd.git'
+"Bundle 'slimv.vim'
+"Bundle 'tpope/vim-fireplace.git'
+"Bundle 'tpope/vim-classpath.git'
+"Bundle 'guns/vim-clojure-static.git'
+"Bundle "pangloss/vim-javascript"
+" http://tuom.as/2013/11/24/my-ruby-on-rails-workflow-with-vim-rspec-and-tmux.html
+" Bundle "scrooloose/nerdtree"
+" Bundle "jgdavey/tslime.vim"
+" Bundle "thoughtbot/vim-rspec"
+
+filetype plugin indent on     " required!
+
+set nocp
+syntax on
+set cursorline
+set t_Co=256
+set number
+set numberwidth=3
+set noeb
+set novb
+set incsearch   "find the next match as we type the search
+set hlsearch    "hilight searches by default
+set ignorecase
+set noautochdir
+set ic
+set smartcase
+set ts=15
+
+"indent settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+set backspace=indent,eol,start "allow backspacing over everything in insert mode
+
+"set nowrap
+set wrap linebreak nolist
+set showbreak=...
+set linespace=2 "add some line space for easy reading
+
+"vertical/horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+
+"statusline setup
+set statusline=%f       "tail of the filename
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+set laststatus=2
+set showcmd     "show incomplete cmds down the bottom
+
+"russian keymapping
+set spelllang=ru_yo,en_us
+set keymap=russian-jcukenmac
+"nmap <leader>m :set keymap=russian-jcukenmac<CR>
+"nmap <leader>w :set keymap=russian-jcukenwin<CR>
+set iminsert=0
+set imsearch=0
+" imap <F5> <C-^>
+" cmap <F5> <C-^>
+
+" vimcast.org => Shortcut to rapidly toggle `set list`
+" nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" nmap \f mngg=G`n
+" nmap <c-e> :Explore %:p:h<cr>
+" nmap \b :FufBuffer <cr>
+" nmap \s :%s/\<<c-r>=expand("<cword>")<cr>\>/
+" nmap \g :silent grep <c-r>=expand("<cword>")<cr> **/*<cr> :cw<cr><c-l>
+
+"redo migration
+"nmap redo :execute '!rake db:migrate:redo VERSION='.split(expand('%:t'),'_')[0]<cr>
+
+" nmap cd :cd %:h<cr>
+set tags+=gems.tags
+set tags+=tags
+command! -nargs=+ G execute 'silent grep! <args>' | copen 42
+" colorscheme twilight256
+colorscheme railscasts
+" colorscheme detailed
+"map \T :Dispatch rspec -X %<cr>
+"map \t :exe "Dispatch rspec -X % -l " . line(".")<CR>
+"map \S :Dispatch spring rspec -X %<cr>
+"map \s :exe "Dispatch spring rspec -X % -l " . line(".")<CR>
+"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+"let g:netrw_list_hide= '.*\.swp$,\~$'
+" map \R :Rubocop<cr>
+" map \rl :RememberSpecLine<cr>
+"map \rr :RunSpecLine<cr>
+
+" grep 'FHIRValueSets' **/*
+" 4251  sed -i 's/FHIRValueSets/Terrminology/g' **/*(.)
+" 4253  sed -i 's/fhir_value_sets/terrminology/g' **/*(.)
+" 4254  rename 's/fhir_value_sets/terrminology/' **/*
+" got from
+
+" http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
+" let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+" vim-rspec mappings
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+
+" autocmd BufWritePre * :FixWhitespace

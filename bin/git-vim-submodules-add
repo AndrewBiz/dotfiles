@@ -18,3 +18,4 @@
 #git submodule add http://github.com/bronson/vim-trailing-whitespace.git vim/bundle/vim-trailing-whitespace
 #git submodule add http://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git vim/bundle/Railscasts-Theme-GUIand256color
 #git submodule add http://github.com/ngmy/vim-rubocop.git vim/bundle/vim-rubocop
+git submodule add http://github.com/henrik/vim-open-url.git vim/bundle/vim-open-url

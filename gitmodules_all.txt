@@ -10,9 +10,6 @@
 -[submodule "vim/bundle/vim-markdown-preview"]
 	path = vim/bundle/vim-markdown-preview
 	url = http://github.com/henrik/vim-markdown-preview.git
--[submodule "vim/bundle/vim-open-url"]
-	path = vim/bundle/vim-open-url
-	url = http://github.com/henrik/vim-open-url.git
 -[submodule "vim/bundle/vim-ruby-runner"]
 	path = vim/bundle/vim-ruby-runner
 	url = http://github.com/henrik/vim-ruby-runner.git
@@ -102,8 +99,10 @@
 =+[submodule "vim/bundle/file-line"]
 	path = vim/bundle/file-line
 	url = http://github.com/vim-scripts/file-line.git
-	
 =+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 =+Bundle 'bronson/vim-trailing-whitespace.git'
 =+Bundle 'Railscasts-Theme-GUIand256color'
 =+Bundle 'ngmy/vim-rubocop.git'
+=+[submodule "vim/bundle/vim-open-url"]
+	path = vim/bundle/vim-open-url
+	url = http://github.com/henrik/vim-open-url.git

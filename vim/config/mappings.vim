@@ -45,13 +45,14 @@ nnoremap <leader><leader> :noh<CR>
 map <leader>u :call OpenURI()<CR>
 
 " Ack/Quickfix windows
-map <leader>q :cclose<CR>
+" map <leader>q :cclose<CR>
+
 " Center line on previous/next fix.
-map - :cprev<CR> zz
-map + :cnext<CR> zz
+" map - :cprev<CR> zz
+" map + :cnext<CR> zz
 " Center line in previous/next file.
-map g- :cpfile<CR> zz
-map g+ :cnfile<CR> zz
+" map g- :cpfile<CR> zz
+" map g+ :cnfile<CR> zz
 
 " Create a split on the given side.
 " From http://technotales.wordpress.com/2010/04/29/vim-splits-a-guide-to-doing-exactly-what-you-want/ via joakimk.
@@ -68,19 +69,37 @@ vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
 
-" I constantly hit "u" in visual mode when I mean to "y". Use "gu" for those rare occasions.
-vnoremap u <nop>
-vnoremap gu u
+" Henrik: I constantly hit "u" in visual mode when I mean to "y". Use "gu" for those rare occasions.
+" vnoremap u <nop>
+" vnoremap gu u
 
-" Because I often accidentally :W when I mean to :w.
-command! W w
+" Henrik: Because I often accidentally :W when I mean to :w.
+" command! W w
 
-" In command mode, type %% to insert the path of the currently edited file, as a shortcut for %:h<tab>.
-cmap %% <C-R>=expand("%:h") . "/" <CR>
+" Henrik: In command mode, type %% to insert the path of the currently edited file, as a shortcut for %:h<tab>.
+" cmap %% <C-R>=expand("%:h") . "/" <CR>
 
 " Run tests in tmux.
-nmap § :call VimuxRunCommand("rake")<cr>
-autocmd BufNewFile,BufRead /Users/henrik/Dropbox/Code/exercism/* nmap § :ExercismTest<cr>
+" nmap § :call VimuxRunCommand("rake")<cr>
 
 " Tell other tmux pane to ctrl+c.
-nmap <leader>§ :VimuxInterruptRunner<CR>
+" nmap <leader>§ :VimuxInterruptRunner<CR>
+
+" ANB: work with russian keaboard
+" nmap <leader>m :set keymap=russian-jcukenmac<CR>
+" nmap <leader>w :set keymap=russian-jcukenwin<CR>
+" inoremap <F5> <C-^>
+" cnoremap <F5> <C-^>
+
+" ANB: fix trailing whightspaces
+autocmd BufWritePre * :FixWhitespace
+
+" vimcast.org => Shortcut to rapidly toggle `set list`
+nnoremap <leader>l :set list!<CR>
+
+" Explorer
+nnoremap <c-e> :Explore %:p:h<cr>
+
+" ANB: to use?
+" nmap \s :%s/\<<c-r>=expand("<cword>")<cr>\>/
+" nmap \g :silent grep <c-r>=expand("<cword>")<cr> **/*<cr> :cw<cr><c-l>
