@@ -11,7 +11,7 @@ alias vrb='vim -c "setf ruby"'
 
 # Shell
 alias la='ls -alh'
-alias ll='ls -lahGO'
+alias ll='ls -lahG'
 alias h='history'
 alias cdd='cd -'  # back to last directory
 alias pg='ps aux | head -n1; ps aux | grep -i'
