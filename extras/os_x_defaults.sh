@@ -27,7 +27,7 @@ defaults write com.apple.screencapture location ~/Desktop/Screenshots/
 killall SystemUIServer
 
 echo "Set a blazingly fast keyboard repeat rate."
-defaults write NSGlobalDomain KeyRepeat -int 0.2
+defaults write NSGlobalDomain KeyRepeat -int 0.1
 
 echo "Set a shorter Delay until key repeat."
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
