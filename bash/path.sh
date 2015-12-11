@@ -2,10 +2,10 @@
 export PATH=$HOME/.bin:$PATH
 
 # So homebrew /usr/local/bin is preferrable to /usr/bin.
-export PATH=/usr/local/sbin:/usr/local/bin:~/.linuxbrew/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:$HOME/.linuxbrew/bin:$PATH
 
 # anb's scripts
-export PATH=~/dev/uni:~/dev/mac:$PATH
+export PATH=$HOME/dev/uni:$HOME/dev/mac:$PATH
 
 # Make autojump's "j" available.
 # brew install autojump
