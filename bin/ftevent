@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/ftools/bin/ftevent "$@"
+~/dev/ftools/bin/ftevent "$@"

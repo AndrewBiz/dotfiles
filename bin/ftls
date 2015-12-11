@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/ftools/bin/ftls "$@"
+~/dev/ftools/bin/ftls "$@"

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/vgen/bin/vgen.rb "$@"
+~/dev/vgen/bin/vgen.rb "$@"

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/fcopy/bin/fcopy.rb "$@"
+~/dev/fcopy/bin/fcopy.rb "$@"

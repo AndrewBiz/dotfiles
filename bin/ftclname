@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/ftools/bin/ftclname "$@"
+~/dev/ftools/bin/ftclname "$@"

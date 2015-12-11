@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/Dropbox/dev/ftools/bin/ftfixdate "$@"
+~/dev/ftools/bin/ftfixdate "$@"
