@@ -1,8 +1,8 @@
 # Dotfile bins.
-export PATH=~/.bin:$PATH
+export PATH=$HOME/.bin:$PATH
 
 # So homebrew /usr/local/bin is preferrable to /usr/bin.
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:~/.linuxbrew/bin:$PATH
 
 # anb's scripts
 export PATH=~/dev/uni:~/dev/mac:$PATH
