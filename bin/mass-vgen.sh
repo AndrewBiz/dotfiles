@@ -10,18 +10,20 @@ for dir in "$@"
 do
   if [ -d "$dir" ]
   then
-    seq=$(printf "%02d" $count)
-    echo VGENing for "$dir" ...
-    vgen -s "$dir" -t web -n vgen-$seq #>> mvgen.sh
-    # check if local web dir exist
-    if [ -d "$dir/web" ]
+    if [ -d "$dir/web-ok" ]
     then
-      echo Directory "$dir/web" exists
+      echo Directory "$dir/web-ok" exists. NO NEED TO convert files
+    elif [ -d "$dir/web" ]
+    then
+      echo Directory "$dir/web" exists. NO NEED TO convert files
     else
+      seq=$(printf "%02d" $count)
+      echo VGENing for "$dir" ...
+      vgen -s "$dir" -t web -n vgen-$seq #>> mvgen.sh
       echo Creating directory "$dir/web" ...
       mkdir "$dir/web"
+      count=$((count+1))
     fi
-	  count=$((count+1))
   fi
 done
 
