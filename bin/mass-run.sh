@@ -7,4 +7,6 @@ do
   echo !!! RUNNING "./$cmd" ...
   echo
   "./$cmd"
+  echo !!! Done "./$cmd", renaming to "./done_$cmd" ...
+  mv "./$cmd" "./done_$cmd"
 done
