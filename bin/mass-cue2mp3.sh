@@ -1,7 +1,7 @@
 #!/bin/bash
 # script for mass cue to mp3 covretor generation
 
-script_name='cue_cnv.sh'
+script_name='cue2mp3.sh'
 
 # create rename script
 echo '#!/bin/bash' > $script_name
