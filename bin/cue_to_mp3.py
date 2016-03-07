@@ -14,15 +14,15 @@ current_file = None
 
 for line in d:
     if line.startswith('REM GENRE '):
-        general['genre'] = ' '.join(line.split(' ')[2:]).replace('"', '')
+        general['genre'] = ' '.join(line.split(' ')[2:]).replace('"', '').strip()
     if line.startswith('REM DATE '):
-        general['date'] = ' '.join(line.split(' ')[2:]).replace('"', '')
+        general['date'] = ' '.join(line.split(' ')[2:]).replace('"', '').strip()
     if line.startswith('PERFORMER '):
-        general['artist'] = ' '.join(line.split(' ')[1:]).replace('"', '')
+        general['artist'] = ' '.join(line.split(' ')[1:]).replace('"', '').strip()
     if line.startswith('TITLE '):
-        general['album'] = ' '.join(line.split(' ')[1:]).replace('"', '')
+        general['album'] = ' '.join(line.split(' ')[1:]).replace('"', '').strip()
     if line.startswith('FILE '):
-        current_file = ' '.join(line.split(' ')[1:-1]).replace('"', '')
+        current_file = ' '.join(line.split(' ')[1:-1]).replace('"', '').strip()
 
     if line.startswith('  TRACK '):
         track = general.copy()
@@ -31,9 +31,9 @@ for line in d:
         tracks.append(track)
 
     if line.startswith('    TITLE '):
-        tracks[-1]['title'] = ' '.join(line.strip().split(' ')[1:]).replace('"', '')
+        tracks[-1]['title'] = ' '.join(line.strip().split(' ')[1:]).replace('"', '').strip()
     if line.startswith('    PERFORMER '):
-        tracks[-1]['artist'] = ' '.join(line.strip().split(' ')[1:]).replace('"', '')
+        tracks[-1]['artist'] = ' '.join(line.strip().split(' ')[1:]).replace('"', '').strip()
     if line.startswith('    INDEX 01 '):
         t = map(int, ' '.join(line.strip().split(' ')[2:]).replace('"', '').split(':'))
         tracks[-1]['start'] = 60 * t[0] + t[1] + t[2] / 100.0
