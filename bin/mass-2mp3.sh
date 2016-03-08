@@ -8,8 +8,8 @@ echo '#!/bin/bash' > $script_name
 
 for file in "$@"
 do
-    fname=${file##*/}
-    fbname=${fname%.*}
+    fname=${file##*/}  #file name without path
+    fbname=${fname%.*} #base name without extention
     echo ffmpeg -i "'$file'" -codec:a libmp3lame -qscale:a 1 "'$fbname.mp3'" >> $script_name
 done
 
