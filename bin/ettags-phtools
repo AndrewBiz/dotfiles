@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+echo "$@"
+echo
+echo "MWG:City                :" `exiftool -binary -short -quiet -MWG:City "$@" -v0`
+echo "  IPTC:City             :" `exiftool --composite -binary -short -quiet -IPTC:City "$@" -v0`
+echo "  XMP:City              :" `exiftool --composite -binary -short -quiet -XMP:City "$@" -v0`
+echo "  XMP:LocationShownCity :" `exiftool --composite -binary -short -quiet -XMP:LocationShownCity "$@" -v0`
+echo "**************************"
+echo
+echo "MWG:Creator    :" `exiftool -binary -short -quiet -MWG:Creator "$@" -v0`
+echo "  EXIF:Artist  :" `exiftool --composite -binary -short -quiet -EXIF:Artist "$@" -v0`
+echo "  IPTC:By-line :" `exiftool --composite -binary -short -quiet -IPTC:By-line "$@" -v0`
+echo "  XMP:Creator  :" `exiftool --composite -binary -short -quiet -XMP:Creator "$@" -v0`
+echo "**************************"
+echo
+echo "MWG:Copyright          :" `exiftool -binary -short -quiet -MWG:Copyright "$@" -v0`
+echo "  EXIF:Copyright       :" `exiftool --composite -binary -short -quiet -EXIF:Copyright "$@" -v0`
+echo "  IPTC:CopyrightNotice :" `exiftool --composite -binary -short -quiet -IPTC:CopyrightNotice "$@" -v0`
+echo "  XMP:Rights           :" `exiftool --composite -binary -short -quiet -XMP:Rights "$@" -v0`
+echo "**************************"
+echo
+# echo "*MWG:CreateDate          :" `exiftool -binary -short -quiet -MWG:CreateDate "$@" -v0`
+# echo "EXIF:CreateDate          :" `exiftool -binary -short -quiet -EXIF:CreateDate "$@" -v0`
+# echo "XMP:CreateDate           :" `exiftool -binary -short -quiet -XMP:CreateDate "$@" -v0`
+# echo "IPTC:DigitalCreationDate :" `exiftool -binary -short -quiet -IPTC:DigitalCreationDate "$@" -v0`
+# echo "IPTC:DigitalCreationTime :" `exiftool -binary -short -quiet -IPTC:DigitalCreationTime "$@" -v0`
+# echo "**************************"
+# echo
+# echo "******* PLAIN TAGS (composite = true) *******"
+# exiftool -short -sort -quiet -G -c "%d %d %.4f" -City -LocationShownCity -FileModifyDate -DateTimeOriginal -CreateDate -GPSDateTime -Creator -Copyright -Keywords -LocationShownWorldRegion -Country -LocationShownCountryCode -State -Location -GPSLatitude -GPSLatitudeRef -GPSLongitude -GPSLongitudeRef -GPSAltitude -GPSAltitudeRef -Collections -CollectionName -CollectionURI -ImageUniqueID -CodedCharacterSet "$@" -v0
+# echo "**************************"
+
+echo "******* PLAIN TAGS (composite = false) *******"
+exiftool --composite -short -sort -quiet -G -c "%d %d %.4f" -City -Artist -By-line -Creator -LocationShownCity -Copyright -CopyrightNotice -Rights -FileModifyDate -DateTimeOriginal -CreateDate -GPSDateTime -Keywords -LocationShownWorldRegion -Country -LocationShownCountryCode -State -Location -GPSLatitude -GPSLatitudeRef -GPSLongitude -GPSLongitudeRef -GPSAltitude -GPSAltitudeRef -Collections -CollectionName -CollectionURI -ImageUniqueID -CodedCharacterSet "$@" -v0
+echo "**************************"
