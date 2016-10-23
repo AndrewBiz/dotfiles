@@ -26,11 +26,11 @@ mkdir -p ~/Desktop/Screenshots
 defaults write com.apple.screencapture location ~/Desktop/Screenshots/
 killall SystemUIServer
 
-echo "Set a blazingly fast keyboard repeat rate."
-defaults write NSGlobalDomain KeyRepeat -int 0.1
-
-echo "Set a shorter Delay until key repeat."
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
+# echo "Set a blazingly fast keyboard repeat rate."
+# defaults write NSGlobalDomain KeyRepeat -int 0.1
+#
+# echo "Set a shorter Delay until key repeat."
+# defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 echo "Increase window resize speed for Cocoa applications."
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
