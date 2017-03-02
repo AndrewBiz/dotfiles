@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exiftool -P -geotag geolog.nmea '-geotime<${DateTimeOriginal}+10:00' "$@"
