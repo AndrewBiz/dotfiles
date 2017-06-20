@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exiftool -P -geotag "./geotag/*.TXT" '-geotime<${DateTimeOriginal}+04:00' "$@"
+exiftool -preserve -overwrite_original -geotag "./geotag/*.*" '-geotime<${DateTimeOriginal}+04:00' "$@"
