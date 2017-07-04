@@ -7,8 +7,8 @@ require 'rubygems'
 require 'mini_exiftool'
 
 if ARGV.empty?
-  puts "usage: ruby #{__FILE__} FILES"
-  puts " i.e.: ruby #{__FILE__} *.jpg"
+  puts "usage: #{__FILE__} FILES"
+  puts " i.e.: #{__FILE__} *.jpg"
   exit(-1)
 end
 
@@ -41,7 +41,7 @@ ARGV.each do |filename|
   end
 
   puts "***** FILE: #{filename} *****"
-  keys_all = (tags_composite.to_hash.keys + tags_simple.to_hash.keys).uniq.sort
+  keys_all = (tags_composite.to_hash.keys + tags_simple.to_hash.keys).compact.uniq.sort
   puts '*******************************************************************************************'
   puts 'TAG_NAME                   DIFF COMPOSITE_VALUE                                SIMPLE_VALUE'
   tags_composite_hash = tags_composite.to_hash
