@@ -16,3 +16,4 @@ source ~/.bash/prompt.sh
 # source ~/.bash/lib/gitpair.sh
 source ~/.bash/greeting.sh
 
+export HOMEBREW_GITHUB_API_TOKEN=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
