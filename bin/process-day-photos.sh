@@ -8,7 +8,7 @@
 # arrange and rename files:
 # !!!
 echo "___ STEP 1: moving and renaming files in current dir"
-phls -R | phmove . -a | phrename -a anb
+# phls -R | phmove . -a | phrename -a anb
 echo "___."
 # find _clock_ files and calculate time difference (UTC - photo) in seconds
 echo "Find _clock_ files, calculate time delta (UTC-photo_time) and put in the script"
@@ -16,7 +16,7 @@ read -p "___ PAUSED (press enter to continue)"
 # rename to get correct date-time in file-names
 # !!!
 echo "___ STEP 2: changing date-time-in-the-name"
-phls -R | phrename -s -4
+phls -R | phrename -s -5
 echo "___."
 
 # fix dto and fmd
